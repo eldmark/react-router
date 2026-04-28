@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+plan.md
+server/data/*.sqlite
+server/data/*.sqlite-shm
+server/data/*.sqlite-wal
+docker-compose.yml

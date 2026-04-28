@@ -23,6 +23,8 @@ VITE_OMDB_API_KEY=tu_clave_aqui
 npm run dev
 npm run server
 npm run build
+npm run server
+docker compose up --build
 ```
 
 ## Cómo correr el proyecto
@@ -31,6 +33,22 @@ npm run build
 2. Ejecuta el backend con `npm run server`.
 3. Ejecuta el frontend con `npm run dev`.
 4. Abre la URL que te muestra Vite.
+
+## Docker
+
+Para levantar toda la app con un solo comando:
+
+```bash
+docker compose up --build
+```
+
+La app quedará disponible en:
+
+- Frontend: `http://localhost:5173`
+- Frontend: `http://localhost:5174`
+- Backend: `http://localhost:3002`
+
+El backend guarda SQLite en un volumen llamado `movie-data`, así que los favoritos e historiales sobreviven al reinicio de los contenedores.
 
 ## Rutas
 
