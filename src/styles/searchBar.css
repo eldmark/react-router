@@ -8,27 +8,27 @@
 .search-bar input {
   flex: 1;
   min-width: 0;
-  border: 1px solid rgba(119, 161, 166, 0.22);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(13, 13, 13, 0.92);
-  color: #77a1a6;
+  background: var(--panel);
+  color: var(--text);
   padding: 0.9rem 1.15rem;
   outline: none;
 }
 
 .search-bar input::placeholder {
-  color: rgba(119, 161, 166, 0.56);
+  color: var(--muted);
 }
 
 .search-bar input:focus {
-  border-color: #456673;
+  border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(69, 102, 115, 0.22);
 }
 
 .search-bar button,
 .secondary-btn {
-  background: #456673;
-  color: #0d0d0d;
+  background: var(--accent);
+  color: var(--bg);
 }
 
 .secondary-btn {

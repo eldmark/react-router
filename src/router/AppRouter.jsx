@@ -8,22 +8,25 @@ import NotFound from "../pages/NotFound";
 
 import { MoviesProvider } from "../context/MoviesContext";
 import { FavoritesProvider } from "../context/FavoritesContext";
+import { ThemeProvider } from "../context/ThemeContext";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <MoviesProvider>
-        <FavoritesProvider>
-          <App>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/items" element={<MoviesList />} />
-              <Route path="/items/:id" element={<MovieDetail />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </App>
-        </FavoritesProvider>
-      </MoviesProvider>
+      <ThemeProvider>
+        <MoviesProvider>
+          <FavoritesProvider>
+            <App>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/items" element={<MoviesList />} />
+                <Route path="/items/:id" element={<MovieDetail />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </App>
+          </FavoritesProvider>
+        </MoviesProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 };

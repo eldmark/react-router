@@ -1,4 +1,5 @@
 import "../styles/searchBar.css";
+import PropTypes from "prop-types";
 
 const SearchBar = ({ onSearch }) => {
   const handleSubmit = (e) => {
@@ -20,3 +21,7 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};

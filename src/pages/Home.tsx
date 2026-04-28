@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useMoviesContext } from "../context/MoviesContext.jsx";
 import "../styles/home.css";
 
 type RecentMovie = {
@@ -9,29 +9,11 @@ type RecentMovie = {
   year: string;
 };
 
-const RECENT_SEARCHES_KEY = "recent-searches";
-const RECENT_MOVIES_KEY = "recent-movies";
-
-const readStorageList = <T,>(key: string): T[] => {
-  const saved = localStorage.getItem(key);
-
-  if (!saved) return [];
-
-  try {
-    return JSON.parse(saved);
-  } catch {
-    return [];
-  }
-};
-
 const Home = () => {
-  const [recentSearches, setRecentSearches] = useState<string[]>([]);
-  const [recentMovies, setRecentMovies] = useState<RecentMovie[]>([]);
-
-  useEffect(() => {
-    setRecentSearches(readStorageList<string>(RECENT_SEARCHES_KEY));
-    setRecentMovies(readStorageList<RecentMovie>(RECENT_MOVIES_KEY));
-  }, []);
+  const { recentSearches, recentMovies } = useMoviesContext() as {
+    recentSearches: string[];
+    recentMovies: RecentMovie[];
+  };
 
   return (
     <div className="home container">

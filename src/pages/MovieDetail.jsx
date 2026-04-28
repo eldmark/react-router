@@ -1,33 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getMovieById } from "../services/api";
+import { getMovieById, saveViewedMovie } from "../services/api";
 import "../styles/detail.css";
-const RECENT_MOVIES_KEY = "recent-movies";
-
-const readStorageList = (key) => {
-  const saved = localStorage.getItem(key);
-
-  if (!saved) return [];
-
-  try {
-    return JSON.parse(saved);
-  } catch {
-    return [];
-  }
-};
-
-const saveViewedMovie = (movie) => {
-  const current = readStorageList(RECENT_MOVIES_KEY);
-  const nextMovie = {
-    id: movie.imdbID,
-    title: movie.Title,
-    image: movie.Poster !== "N/A" ? movie.Poster : "/no-image.png",
-    year: movie.Year,
-  };
-
-  const next = [nextMovie, ...current.filter((item) => item.id !== nextMovie.id)].slice(0, 8);
-  localStorage.setItem(RECENT_MOVIES_KEY, JSON.stringify(next));
-};
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -37,10 +11,20 @@ const MovieDetail = () => {
 
   useEffect(() => {
     const fetchDetail = async () => {
-      const data = await getMovieById(id);
-      setMovie(data);
-      saveViewedMovie(data);
-      setLoading(false);
+      try {
+        const data = await getMovieById(id);
+        setMovie(data);
+        await saveViewedMovie({
+          id: data.imdbID,
+          title: data.Title,
+          image: data.Poster !== "N/A" ? data.Poster : "/no-image.png",
+          year: data.Year,
+        });
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchDetail();

@@ -1,7 +1,7 @@
 .card {
-  background: linear-gradient(180deg, rgba(27, 27, 27, 0.96), rgba(17, 17, 17, 0.96));
-  color: #77a1a6;
-  border: 1px solid rgba(119, 161, 166, 0.18);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  color: var(--text);
+  border: 1px solid var(--border);
   border-radius: 22px;
   overflow: hidden;
   transition: transform 180ms ease, border-color 180ms ease;
@@ -28,7 +28,7 @@
 }
 
 .card-content p {
-  color: rgba(119, 161, 166, 0.7);
+  color: var(--muted);
 }
 
 .card-content button {
@@ -42,8 +42,8 @@
   justify-content: center;
   margin-top: 0.75rem;
   width: 100%;
-  background: #456673;
-  color: #0d0d0d;
+  background: var(--accent);
+  color: var(--bg);
   padding: 0.8rem 1rem;
   border-radius: 999px;
   text-decoration: none;

@@ -4,12 +4,12 @@
 
 .movies-title {
   margin: 0;
-  color: #77a1a6;
+  color: var(--text);
 }
 
 .movies-subtitle {
   margin: 0.45rem 0 0;
-  color: rgba(119, 161, 166, 0.72);
+  color: var(--muted);
 }
 
 .grid {
@@ -28,5 +28,5 @@
 }
 
 .toolbar .hint {
-  color: rgba(119, 161, 166, 0.72);
+  color: var(--muted);
 }

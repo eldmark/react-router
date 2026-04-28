@@ -3,7 +3,7 @@
   grid-template-columns: minmax(260px, 320px) 1fr;
   gap: 1.5rem;
   padding: 1.5rem 0 2rem;
-  color: #77a1a6;
+  color: var(--text);
 }
 
 .detail img {
@@ -14,8 +14,8 @@
 
 .info {
   max-width: 720px;
-  background: rgba(21, 21, 21, 0.92);
-  border: 1px solid rgba(119, 161, 166, 0.18);
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+  border: 1px solid var(--border);
   border-radius: 22px;
   padding: 1.25rem;
 }
@@ -27,8 +27,8 @@
 
 .ratings {
   margin-top: 1.25rem;
-  background: rgba(13, 13, 13, 0.9);
-  border: 1px solid rgba(119, 161, 166, 0.12);
+  background: var(--bg);
+  border: 1px solid var(--border);
   padding: 1rem;
   border-radius: 18px;
 }

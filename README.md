@@ -1,75 +1,65 @@
-# React + TypeScript + Vite
+# Movie Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nivel objetivo: Senior / 100
 
-Currently, two official plugins are available:
+Aplicación de películas hecha con Vite, React y `react-router-dom` v6. Incluye listado, detalle, búsqueda, 404, favoritos con persistencia real, historial de películas vistas, historial de búsquedas y modo claro/oscuro.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Requisitos
 
-## React Compiler
+- Node.js 24 o superior recomendado.
+- Una clave de OMDb API en un archivo `.env`.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Variables de entorno
 
-Note: This will impact Vite dev & build performances.
+Crear un archivo `.env` en la raíz con:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_OMDB_API_KEY=tu_clave_aqui
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
+npm run server
+npm run build
 ```
+
+## Cómo correr el proyecto
+
+1. Instala dependencias.
+2. Ejecuta el backend con `npm run server`.
+3. Ejecuta el frontend con `npm run dev`.
+4. Abre la URL que te muestra Vite.
+
+## Rutas
+
+- `/` Home con últimas búsquedas, películas recientes y acceso rápido.
+- `/items` Buscador y listado de películas.
+- `/items/:id` Detalle completo de una película.
+- `*` Página 404.
+
+## Persistencia real
+
+El backend guarda datos en SQLite dentro de `server/data/movie-blog.sqlite`.
+
+- Favoritos persistentes.
+- Historial de búsquedas.
+- Historial de películas vistas.
+
+## Estado global y tema
+
+- Favoritos con Context API.
+- Historial de búsquedas y vistas sincronizado desde el backend.
+- Modo claro/oscuro guardado en `localStorage`.
+
+## Componentes reutilizables
+
+- `Navbar`: navegación principal y toggle de tema.
+- `SearchBar`: formulario reusable para búsquedas.
+- `MovieCard`: tarjeta reusable para cada película.
+- `RandomButton`: navegación a una película aleatoria.
+
+## Video demo
+
+Coloca el video de demostración en la carpeta `demo/` y asegúrate de mostrar las rutas `/`, `/items` y `/items/:id` funcionando.
