@@ -4,27 +4,30 @@
   border: 1px solid var(--border);
   border-radius: 22px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .card:hover {
-    display: flex;
-    align-items: center;
-    
-
+  transform: translateY(-4px);
+  border-color: rgba(119, 161, 166, 0.4);
 }
 
 .card img {
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-  display: flex;
+  display: block;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding: 1rem;
+  flex: 1;
 }
 
 .card-content h3,
@@ -51,6 +54,7 @@
   font-size: 1.2rem;
   transition: transform 100ms ease;
   margin-top: 0.5rem;
+  align-self: flex-start;
 }
 
 .card-content button:hover {
@@ -68,10 +72,11 @@
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   transition: background 150ms ease, box-shadow 150ms ease;
   border: none;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .btn:hover {
@@ -81,14 +86,12 @@
 
 @media (max-width: 640px) {
   .btn {
-    padding: 0.65rem 0.75rem;
-    font-size: 0.9rem;
+    padding: 0.7rem 0.8rem;
   }
 }
 
 @media (max-width: 400px) {
   .btn {
-    padding: 0.6rem 0.5rem;
-    font-size: 0.85rem;
+    padding: 0.65rem 0.7rem;
   }
 }
