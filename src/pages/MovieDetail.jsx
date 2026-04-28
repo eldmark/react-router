@@ -34,7 +34,7 @@ const MovieDetail = () => {
 
   return (
     <div className="detail">
-      <img src={movie.Poster} alt={movie.Title} />
+      <img  src={movie.Poster} alt={movie.Title} />
 
       <div className="info">
         <h1>{movie.Title}</h1>

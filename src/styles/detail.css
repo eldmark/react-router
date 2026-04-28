@@ -1,15 +1,18 @@
 .detail {
-  display: grid;
-  grid-template-columns: minmax(260px, 320px) 1fr;
-  gap: 1.5rem;
-  padding: 1.5rem 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
   color: var(--text);
+  margin: 0 auto;
 }
 
 .detail img {
+  display: flex;
   width: 100%;
   border-radius: 22px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  max-width: 30%;
+  padding: 10vh;
 }
 
 .info {
@@ -36,5 +39,13 @@
 @media (max-width: 840px) {
   .detail {
     grid-template-columns: 1fr;
+    place-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail {
+    gap: 1rem;
+    padding: 1rem 0 1.5rem;
   }
 }
