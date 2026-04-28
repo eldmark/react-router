@@ -69,7 +69,7 @@ El backend guarda datos en SQLite dentro de `server/data/movie-blog.sqlite`.
 
 - Favoritos con Context API.
 - Historial de búsquedas y vistas sincronizado desde el backend.
-- Modo claro/oscuro guardado en `localStorage`.
+- Modo claro/oscuro manejado con Context API.
 
 ## Componentes reutilizables
 
@@ -80,4 +80,4 @@ El backend guarda datos en SQLite dentro de `server/data/movie-blog.sqlite`.
 
 ## Video demo
 
-Coloca el video de demostración en la carpeta `demo/` y asegúrate de mostrar las rutas `/`, `/items` y `/items/:id` funcionando.
+ video de demostración en la carpeta `demo/` 

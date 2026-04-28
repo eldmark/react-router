@@ -1,14 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
-const THEME_KEY = "theme";
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => localStorage.getItem(THEME_KEY) || "dark");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     document.body.dataset.theme = theme;
-    localStorage.setItem(THEME_KEY, theme);
   }, [theme]);
 
   const toggleTheme = () => {
