@@ -1,0 +1,40 @@
+.detail {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0 2rem;
+  color: #77a1a6;
+}
+
+.detail img {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.info {
+  max-width: 720px;
+  background: rgba(21, 21, 21, 0.92);
+  border: 1px solid rgba(119, 161, 166, 0.18);
+  border-radius: 22px;
+  padding: 1.25rem;
+}
+
+.plot {
+  margin-top: 1rem;
+  line-height: 1.65;
+}
+
+.ratings {
+  margin-top: 1.25rem;
+  background: rgba(13, 13, 13, 0.9);
+  border: 1px solid rgba(119, 161, 166, 0.12);
+  padding: 1rem;
+  border-radius: 18px;
+}
+
+@media (max-width: 840px) {
+  .detail {
+    grid-template-columns: 1fr;
+  }
+}

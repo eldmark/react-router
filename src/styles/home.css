@@ -1,0 +1,123 @@
+.home {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1rem 0 2rem;
+}
+
+.hero,
+.home-section {
+  background: linear-gradient(180deg, rgba(27, 27, 27, 0.96), rgba(17, 17, 17, 0.96));
+  border: 1px solid rgba(119, 161, 166, 0.18);
+  border-radius: 24px;
+  padding: 1.4rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: rgba(119, 161, 166, 0.7);
+}
+
+.hero h1 {
+  margin: 0;
+  color: #77a1a6;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.05;
+  max-width: 12ch;
+}
+
+.hero-copy {
+  margin: 1rem 0 1.25rem;
+  max-width: 64ch;
+  color: rgba(119, 161, 166, 0.78);
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #456673;
+  color: #0d0d0d;
+  padding: 0.9rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-head h2 {
+  margin: 0;
+  color: #77a1a6;
+}
+
+.section-head span {
+  color: rgba(119, 161, 166, 0.62);
+}
+
+.search-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.search-tag {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(69, 102, 115, 0.16);
+  border: 1px solid rgba(69, 102, 115, 0.35);
+  color: #77a1a6;
+}
+
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.recent-card {
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(119, 161, 166, 0.16);
+  background: rgba(13, 13, 13, 0.9);
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.recent-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(69, 102, 115, 0.55);
+}
+
+.recent-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.recent-card div {
+  padding: 0.9rem;
+}
+
+.recent-card h3,
+.recent-card p {
+  margin: 0;
+}
+
+.recent-card p {
+  color: rgba(119, 161, 166, 0.7);
+}
+
+@media (max-width: 640px) {
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
