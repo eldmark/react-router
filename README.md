@@ -1,6 +1,5 @@
 # Movie Blog
 
-Nivel objetivo: Senior / 100
 
 Aplicación de películas hecha con Vite, React y `react-router-dom` v6. Incluye listado, detalle, búsqueda, 404, favoritos con persistencia real, historial de películas vistas, historial de búsquedas y modo claro/oscuro.
 
